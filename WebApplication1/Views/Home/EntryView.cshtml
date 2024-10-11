@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "_Layout";
+    ViewBag.Title = "Entry"; 
+}
+
+<div style="text-align: center; line-height: 10px; font-size: 18px">
+    <h3> Good <span id="timeOfDay"></span>, dear visitor</h3>
+    <p>Thank you for visiting our site.</p>
+    <p>Help us get better.</p>
+    <p>Please rate our work by following the link below.</p>
+    <a class="btn btn-primary" asp-action="OpenInputView">Review</a>
+    <p style="margin-top: 18px;">Click <a asp-action="OpenListView">here</a> to see all reviews.</p>
+</div>
+
+
+<script>
+        const now = new Date();
+        const hours = now.getHours();
+
+        if (hours >= 5 && hours < 12) {
+            document.getElementById('timeOfDay').textContent = "morning";
+        } else if (hours >= 12 && hours < 17) {
+            document.getElementById('timeOfDay').textContent = "afternoon";
+        } else if (hours >= 17 && hours < 21) {
+            document.getElementById('timeOfDay').textContent = "evening";
+        } else {
+            document.getElementById('timeOfDay').textContent = "night";
+        }
+</script>

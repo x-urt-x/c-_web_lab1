@@ -1,0 +1,20 @@
+﻿@model Person
+@{
+	Layout = "_Layout";
+    ViewBag.Title = "Input"; 
+}
+<h2 class="text text-primary form-text text-center in">Review</h2>
+<form style="text-align: center" method="post" asp-action="SubmitPersonRew">
+    <label>Name</label>
+    <div asp-validation-summary="All"></div>
+    <input type="text" class="form-control" asp-for="Name" />
+    <label>Email</label>
+    <input type="email" class="form-control" asp-for="Email" />
+    <label>Phone</label>
+    <input type="tel" class="form-control" asp-for="Phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+    <label>Review</label>
+    <textarea class="form-control" rows="3" asp-for="Review"></textarea>
+    <label>Mark</label>
+    <input type="number" class="form-control" asp-for="Mark" min="1" max="5" />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

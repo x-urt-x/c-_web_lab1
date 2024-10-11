@@ -1,0 +1,11 @@
+﻿@model Person
+@{
+	Layout = "_Layout";
+    ViewBag.Title = "Thanks"; 
+}
+
+<div style="text-align: center; line-height: 10px; font-size: 18px">
+    <h2>Thank you, @Model.Name, for your review and attention to our work.</h2>
+    <p>We realy appreciate that we have such responsive clients as you.</p>
+    <p>Click <a asp-action="OpenListView">here</a> to see all reviews.</p>
+</div>
